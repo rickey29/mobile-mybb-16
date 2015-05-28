@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme name="Mobile MyBB 1.6" version="1616">
+	<properties>
+		<templateset><![CDATA[2]]></templateset>
+		<editortheme><![CDATA[default]]></editortheme>
+		<imgdir><![CDATA[images]]></imgdir>
+		<logo><![CDATA[images/logo.gif]]></logo>
+		<tablespace><![CDATA[4]]></tablespace>
+		<borderwidth><![CDATA[1]]></borderwidth>
+	</properties>
+	<stylesheets>
+	</stylesheets>
+	<templates>
+		<template name="forumdisplay_subforums" version="1616"><![CDATA[<li data-role="list-divider">{$lang->sub_forums_in}</li>
+{$forums}]]></template>
+		<template name="forumdisplay_threadlist" version="1616"><![CDATA[<li data-role="list-divider">{$foruminfo['name']}</li>
+{$announcementlist}
+{$threads}
+</ul>
+{$multipage}]]></template>
+		<template name="index_option" version="1616"><![CDATA[<html>
+<head>
+<title>{$lang->options}</title>
+{$headerinclude}
+</head>
+<body>
+{$header_option}
+{$index_panel}
+</ul>
+{$footer}
+</body>
+</html>]]></template>
+		<template name="forumbit_depth2_forum_lastpost" version="1616"><![CDATA[<a href="{$lastpost_link}" rel="external" data-transition="slideup"></a>]]></template>
+		<template name="index" version="1616"><![CDATA[<html>
+<head>
+<title>{$mybb->settings['bbname']}</title>
+{$headerinclude}
+</head>
+<body>
+{$header}
+{$forums}
+</ul>
+{$footer_personal}
+{$footer}
+</body>
+</html>]]></template>
+		<template name="htmldoctype" version="1616"><![CDATA[<!DOCTYPE html>]]></template>
+		<template name="nav_bit_active" version="1616"><![CDATA[<li>
+<a href="{$navbit['url']}" rel="external">{$navbit['name']}</a>
+</li>]]></template>
+		<template name="header" version="1616"><![CDATA[<div data-role="page">
+<div data-role="header" data-position="fixed">
+<a href="{$mybb->settings['bburl']}/index.php?m-mode=option" data-rel="dialog" data-icon="bars" data-transition="pop">{$lang->options}</a>
+<h1>{$mybb->settings['bbname']}</h1>
+</div>
+<div data-role="content">
+<ul data-role="listview">
+{$header_personal}
+<navigation>]]></template>
+		<template name="forumdisplay_announcements_announcement" version="1616"><![CDATA[<li>
+<a href="{$announcement['announcementlink']}" rel="external">
+<h3>{$announcement['subject']}</h3>
+<p>{$announcement['username']} &gt; {$postdate}, {$posttime}</p>
+</a>
+</li>]]></template>
+		<template name="forumdisplay_nothreads" version="1616"><![CDATA[<li>{$lang->nothreads}</li>]]></template>
+		<template name="forumdisplay_announcements" version="1616"><![CDATA[<li data-role="list-divider" data-theme="d">{$lang->forum_announcements}</li>
+{$announcements}]]></template>
+		<template name="header_welcomeblock_guest" version="1616"><![CDATA[<li>
+<a href="{$mybb->settings['bburl']}/member.php?action=login" rel="external">{$lang->welcome_login}</a>
+</li>]]></template>
+		<template name="footer" version="1616"><![CDATA[</div>
+</div>]]></template>
+		<template name="nav" version="1616"><![CDATA[<li>
+<div data-role="collapsible" data-mini="true" data-theme="b" data-content-theme="d">
+<h4>{$lang->index}</h4>
+<ul data-role="listview">
+{$nav}
+{$activebit}
+</ul>
+</div>
+</li>]]></template>
+		<template name="headerinclude" version="1616"><![CDATA[<link rel="alternate" type="application/rss+xml" title="{$lang->latest_threads} (RSS 2.0)" href="{$mybb->settings['bburl']}/syndication.php" />
+<link rel="alternate" type="application/atom+xml" title="{$lang->latest_threads} (Atom 1.0)" href="{$mybb->settings['bburl']}/syndication.php?type=atom1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="{$mybb->settings['bburl']}/inc/plugins/mmybb16/themes/jquery/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+<script src="{$mybb->settings['bburl']}/inc/plugins/mmybb16/themes/jquery/jquery-1.9.1.min.js"></script>
+<script src="{$mybb->settings['bburl']}/inc/plugins/mmybb16/themes/jquery/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<style type="text/css">
+img { max-width: 100%; height: auto; }
+</style>]]></template>
+		<template name="forumdisplay_sticky_sep" version="1616"><![CDATA[<li data-role="list-divider" data-theme="d">{$lang->sticky_threads}</li>]]></template>
+		<template name="forumdisplay_thread" version="1616"><![CDATA[<li>
+<a href="{$thread['threadlink']}" rel="external">
+<h3>{$thread['subject']}</h3>
+<p>{$thread['threadusername']} &gt; {$lastpostdate}, {$lastposttime}</p>
+<span class="ui-li-count">{$thread['replies']} / {$thread['views']}</span>
+</a>
+<a href="{$thread['lastpostlink']}" rel="external" data-transition="slideup"></a>
+</li>]]></template>
+		<template name="index_panel" version="1616"><![CDATA[{$welcomeblock}
+<li>
+<a href="{$mybb->settings['bburl']}/index.php?m-redirection=desktop" rel="external">{$lang->switch_to_deskto_style}</a>
+</li>]]></template>
+		<template name="header_option" version="1616"><![CDATA[<div data-role="page">
+<div data-role="header" data-position="fixed">
+<h1>{$lang->options}</h1>
+</div>
+<div data-role="content">
+<ul data-role="listview">]]></template>
+		<template name="nav_bit" version="1616"><![CDATA[<li>
+<a href="{$navbit['url']}" rel="external">{$navbit['name']}</a>
+</li>]]></template>
+		<template name="header_welcomeblock_member" version="1616"><![CDATA[<li>
+<a href="{$mybb->settings['bburl']}/member.php?action=logout&amp;logoutkey={$mybb->user['logoutkey']}" rel="external">{$lang->welcome_logout}</a>
+</li>]]></template>
+		<template name="forumbit_depth1_cat" version="1616"><![CDATA[<li data-role="list-divider">{$forum['name']}</li>
+{$sub_forums}]]></template>
+		<template name="header_personal" version="1616"><![CDATA[<li>
+{$lang->personal_header}
+</li>]]></template>
+		<template name="forumbit_depth2_forum" version="1616"><![CDATA[<li>
+<a href="{$forum_url}" rel="external">
+<h3>{$forum['name']}</h3>
+<p>{$forum['description']}</p>
+<span class="ui-li-count">{$threads} / {$posts}</span>
+</a>
+{$lastpost}
+</li>]]></template>
+		<template name="footer_personal" version="1616"><![CDATA[</div>
+<div data-role="footer" data-theme="c">
+{$lang->personal_footer}]]></template>
+		<template name="member_login" version="1616"><![CDATA[<html>
+<head>
+<title>{$lang->login}</title>
+{$headerinclude}
+</head>
+<body>
+{$header}
+<li data-role="list-divider">{$lang->login}</li>
+{$inline_errors}
+{$member_loggedin_notice}
+<li>
+<form action="member.php" method="post">
+<div data-role="fieldcontain">
+<label for="username">{$lang->username}</label>
+<input type="text" name="username" id="username" size="25" value="{$username}" />
+</div>
+<div data-role="fieldcontain">
+<label for="password">{$lang->password}<br />{$lang->pw_note}</label>
+<input type="password" name="password" id="password" size="25" value="{$password}" />
+</div>
+<div data-role="fieldcontain">
+<fieldset data-role="controlgroup">
+<legend></legend>
+<label for="remember">{$lang->remember_me}</label>
+<input type="checkbox" name="remember" id="remember" checked="checked" value="yes" />
+</fieldset>
+</div>
+{$captcha}
+<fieldset data-role="controlgroup">
+<input type="submit" name="submit" value="{$lang->login}" data-theme="a" />
+</fieldset>
+<input type="hidden" name="action" value="do_login" />
+<input type="hidden" name="url" value="{$redirect_url}" />
+</form>
+</li>
+<li>
+<a href="member.php?action=lostpw" rel="external">{$lang->lostpw_note}</a>
+</li>
+</ul>
+{$footer}
+</body>
+</html>]]></template>
+		<template name="redirect" version="1616"><![CDATA[<html>
+<head>
+<title>{$title}</title>
+<meta http-equiv="refresh" content="2;URL={$url}" />
+{$headerinclude}
+</head>
+<body>
+{$header}
+<li data-role="list-divider">{$title}</li>
+<li>
+<div>
+{$message}
+<a href="{$url}" rel="external" data-role="button" data-theme="a">{$lang->click_no_wait}</a>
+</div>
+</li>
+</ul>
+{$footer}
+</body>
+</html>]]></template>
+		<template name="member_loggedin_notice" version="1616"><![CDATA[<li>{$lang->already_logged_in}</li>]]></template>
+		<template name="post_captcha" version="1616"><![CDATA[<div data-role="fieldcontain">
+<label for="imagestring">{$lang->image_verification}</label>
+<img src="captcha.php?imagehash={$imagehash}" id="captcha_img" />
+</div>
+<div data-role="fieldcontain">
+<label for="imagestring"></label>
+<input type="submit" name="refresh" id="refresh" value="{$lang->refresh}" />
+</div>
+<div data-role="fieldcontain">
+<label for="imagestring">{$lang->verification_note}<br />{$lang->verification_subnote}</label>
+<input type="text" name="imagestring" value="" id="imagestring" size="16" />
+</div>
+<input type="hidden" name="imagehash" value="{$imagehash}" id="imagehash" />]]></template>
+		<template name="member_lostpw" version="1616"><![CDATA[<html>
+<head>
+<title>{$lang->lost_pw}</title>
+{$headerinclude}
+</head>
+<body>
+{$header}
+<li data-role="list-divider">{$lang->lost_pw_form}</li>
+<li>
+<form action="member.php" method="post">
+<div data-role="fieldcontain">
+<label for="email">{$lang->email_address}</label>
+<input type="text" name="email" id="email" />
+</div>
+<fieldset data-role="controlgroup">
+<input type="submit" value="{$lang->request_user_pass}" data-theme="a" />
+</fieldset>
+<input type="hidden" name="action" value="do_lostpw" />
+</form>
+</li>
+</ul>
+{$footer}
+</body>
+</html>]]></template>
+		<template name="forumdisplay" version="1616"><![CDATA[<html>
+<head>
+<title>{$foruminfo['name']}</title>
+{$headerinclude}
+{$rssdiscovery}
+</head>
+<body>
+{$header}
+{$subforums}
+{$threadslist}
+{$footer}
+</body>
+</html>]]></template>
+		<template name="multipage_prevpage" version="1616"><![CDATA[<li>
+<a href="{$page_url}" rel="external" class="ui-btn-active">{$lang->multipage_previous}</a>
+</li>]]></template>
+		<template name="multipage_start" version="1616"><![CDATA[<li>
+<a href="{$page_url}" rel="external" class="ui-btn-active">{$lang->multipage_first}</a>
+</li>]]></template>
+		<template name="showthread" version="1616"><![CDATA[<html>
+<head>
+<title>{$thread['subject']}</title>
+{$headerinclude_showthread}
+</head>
+<body>
+{$header}
+<li data-role="list-divider">{$thread['subject']}</li>
+{$posts}
+<li>
+<div>
+<a href="{$next_oldest_link}" rel="external" data-role="button" data-inline="true" data-theme="b">{$lang->next_oldest}</a>
+<a href="{$next_newest_link}" rel="external" data-role="button" data-inline="true" data-theme="b">{$lang->next_newest}</a>
+</div>
+</li>
+</ul>
+{$multipage}
+{$footer}
+</body>
+</html>]]></template>
+		<template name="multipage_nextpage" version="1616"><![CDATA[<li>
+<a href="{$page_url}" rel="external" class="ui-btn-active">{$lang->multipage_next}</a>
+</li>]]></template>
+		<template name="forumdisplay_threads_sep" version="1616"><![CDATA[<li data-role="list-divider" data-theme="d">{$lang->normal_threads}</li>]]></template>
+		<template name="multipage" version="1616"><![CDATA[</div>
+<div data-role="footer" data-id="foo1" data-position="fixed">
+<div data-role="navbar">
+<ul>
+{$start}
+{$prevpage}
+{$nextpage}
+{$end}
+</ul>
+</div>]]></template>
+		<template name="multipage_end" version="1616"><![CDATA[<li>
+<a href="{$page_url}" rel="external" class="ui-btn-active">{$lang->multipage_last}</a>
+</li>]]></template>
+		<template name="error" version="1616"><![CDATA[<html>
+<head>
+<title>{$title}</title>
+{$headerinclude}
+</head>
+<body>
+{$header}
+<li data-role="list-divider">{$title}</li>
+<li>{$error}</li>
+</ul>
+{$footer}
+</body>
+</html>]]></template>
+		<template name="headerinclude_showthread" version="1616"><![CDATA[<link rel="alternate" type="application/rss+xml" title="{$lang->latest_threads} (RSS 2.0)" href="{$mybb->settings['bburl']}/syndication.php" />
+<link rel="alternate" type="application/atom+xml" title="{$lang->latest_threads} (Atom 1.0)" href="{$mybb->settings['bburl']}/syndication.php?type=atom1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="{$mybb->settings['bburl']}/inc/plugins/mmybb16/themes/jquery/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+<script src="{$mybb->settings['bburl']}/inc/plugins/mmybb16/themes/jquery/jquery-1.9.1.min.js"></script>
+<script src="{$mybb->settings['bburl']}/inc/plugins/mmybb16/themes/jquery/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<style type="text/css">
+img { max-width: 100%; height: auto; }
+</style>
+<script src="{$mybb->settings['bburl']}/inc/plugins/mmybb16/themes/jquery/mobile/scroll_to_hash.js"></script>]]></template>
+		<template name="announcement" version="1616"><![CDATA[<html>
+<head>
+<title>{$lang->forum_announcement}</title>
+{$headerinclude}
+</head>
+<body>
+{$header}
+<li data-role="list-divider">{$lang->forum_announcement}</li>
+{$announcement}
+</ul>
+{$footer}
+</body>
+</html>]]></template>
+		<template name="postbit" version="1616"><![CDATA[]]></template>
+		<template name="postbit_ignored" version="1616"><![CDATA[<li>
+<div id="pid{$post['pid']}">
+<div data-role="collapsible">
+<h4>{$ignored_message}</h4>
+<h3>{$post['subject']}</h3>
+<p>{$post['username']} &gt; {$post['postdate']}, {$post['posttime']}</p>
+<div>
+{$post['message']}
+</div>
+</div>
+</div>
+</li>]]></template>
+		<template name="postbit_normal" version="1616"><![CDATA[<li>
+<div id="pid{$post['pid']}">
+<h3>{$post['subject']}</h3>
+<p>{$post['username']} &gt; {$post['postdate']}, {$post['posttime']}</p>
+<div>
+{$post['message']}
+</div>
+</div>
+</li>]]></template>
+	</templates>
+</theme>
