@@ -2,7 +2,7 @@
 /*
 	project: Mobile MyBB 1.6 (MMyBB16)
 	file:    MYBB_ROOT/inc/languages/english/mmybb16.lang.php
-	version: 0.1.0
+	version: 1.0.0
 	author:  Rickey Gu
 	web:     http://flexplat.com
 	email:   rickey29@gmail.com
